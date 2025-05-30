@@ -18,15 +18,11 @@ export default function ProductDetail() {
 
   return (
     <div className="p-4 max-w-xl mx-auto">
-      <img src={product.image} alt={product.title} className="h-60 mx-auto" />
+      <img src={product.image} alt={product.title} className="h-60 mx-auto flex flex-col md:flex-row items-center gap-6" />
       <h1 className="text-lg font-bold mt-4">{product.title}</h1>
       <p className="text-gray-600">{product.category}</p>
       <p className="mt-2 text-sm">{product.description}</p>
-      <p className="text-xl font-bold mt-2">${product.price}</p>
-
-      {/* <Link to={`/product/${product.id}`}>
-            <img src={product.image} alt={product.title} className="h-40 mx-auto" />
-      </Link> */}
+      <p className="text-lg font-semibold mt-2">${product.price}</p>
       
       <button
         onClick={() => dispatch(addFavorite(product))}

@@ -11,11 +11,11 @@ export default function Favorites() {
       {favorites.length === 0 ? (
         <p>No favorites yet.</p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
           {favorites.map(product => (
             <div key={product.id} className="border p-4 rounded shadow">
               <img src={product.image} alt={product.title} className="h-32 mx-auto" />
-              <h2 className="text-sm font-medium mt-2">{product.title}</h2>
+              <h2 className="text-sm font-medium mt-2 line-clamp-2">{product.title}</h2>
               <p className="text-sm text-gray-600">${product.price}</p>
               <button
                 onClick={() => dispatch(removeFavorite(product.id))}
